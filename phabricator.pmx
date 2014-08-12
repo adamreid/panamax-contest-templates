@@ -1,0 +1,20 @@
+---
+name: phabricator
+description: Based off of fredericlb/docker-phabricator. Adding separated components
+  for web/db and fixing installation issues presented in the phabricator app.
+keywords: ''
+type: Default
+documentation: ''
+images:
+- name: fredericlb_docker-phabricator_latest
+  source: fredericlb/docker-phabricator:latest
+  type: Default
+  ports:
+  - host_port: '8080'
+    container_port: '80'
+    proto: TCP
+  volumes:
+  - host_path: ''
+    container_path: "/var/lib/mysql"
+  - host_path: ''
+    container_path: "/var/repo"
